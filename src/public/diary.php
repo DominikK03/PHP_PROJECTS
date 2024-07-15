@@ -15,7 +15,6 @@
 <div class="jumbotron text-center">
     <h1>My Private Diary</h1>
     <p class="text-muted"><small>Only sensitive information here</small></p>
-    <p><small><a class="text-muted" href="../app/logout.php">Logout</a></small></p>
 </div>
 
 <div class="container">
@@ -27,36 +26,10 @@
         </div>
     <?php } ?>
     <div class="row">
-        <form action="../app/database/insert-data.php" method="post">
-            <table class="table table-hover">
-                <thead>
-                <tr>
-                    <th class="text-center">Date</th>
-                    <th class="text-center">Title</th>
-                    <th class="text-center">Description</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>
-                        <input type="date" class="form-control" name="date" id="date" required>
-                        <br/>
-                        <input type=submit name='addnote' id='addnote' class="btn-primary mt-10" value="Add Note">
-
-                    </td>
-                    <td>
-                        <input type="text" class="form-control" name="title" id="title" required>
-                    </td>
-                    <td>
-                        <input type="text" class="form-control" name="description" id="description" style="height: 100px" required>
-                    </td>
-                </tr>
-
-            </table>
-
-
-    </div>
-    <div class="row">
+        <form action="../app/Router.php" method="get">
+            <input type="submit" name="addnote" id="addnote" class="btn btn-primary" value="Add Note">
+            <input type="submit" name="logout" id="logout" class="btn btn-warning" value="Logout">
+        </form>
 
         <table class="table table-bordered">
             <thead>
@@ -64,8 +37,8 @@
                 <th class="text-center">Date</th>
                 <th class="text-center">Title</th>
                 <th class="text-center">Description</th>
-                <th class="text-center">Edit</th>
-                <th class="text-center">Delete</th>
+                <th class="text-center" style="width: 10px">Edit</th>
+                <th class="text-center" style="width: 10px">Delete</th>
             </tr>
             </thead>
             <tbody>
@@ -84,8 +57,8 @@
                 <td><?php echo $row['date'];?></td>
                 <td><?php echo $row['name'];?></td>
                 <td><?php echo $row['description'];?></td>
-                <td><a href="../app/database/edit-data.php?id=<?php echo $row['id'];?>"><i class="fa fa-edit"></i></a> </td>
-                <td><a href="../app/database/delete-data.php?id=<?php echo $row['id'];?>"><i class="fa-solid fa-trash text-danger"></i></a> </td>
+                <td style="text-align: center"><a href="../app/database/edit-data.php?id=<?php echo $row['id'];?>"><i class="fa fa-edit"></i></a> </td>
+                <td style="text-align: center"><a href="../app/database/delete-data.php?id=<?php echo $row['id'];?>"><i class="fa-solid fa-trash text-danger"></i></a> </td>
             </tr>
            <?php
            } //while ending
