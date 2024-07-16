@@ -9,5 +9,5 @@ $query = "DELETE FROM diary WHERE id = '$record_id'";
 $run = mysqli_query($conn,$query);
 
 if($run){
-    header("Location: /public/diary.php?record-delete");
+    header("Location: /public/diary.php?note-deleted");
 }

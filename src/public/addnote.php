@@ -55,8 +55,7 @@
                     <th class="text-center" colspan="2">Description</th>
                 </tr>
                 <tr>
-                    <td colspan="2"><input type="text" class="form-control" name="description" id="description"
-                                           style="height: 100px" required></td>
+                    <td colspan="2"><textarea class="form-control" id="description" name="description" rows="4" cols="50"> </textarea></td>
                 </tr>
                 </tbody>
             </table>

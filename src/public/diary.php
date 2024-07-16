@@ -19,10 +19,17 @@
 
 <div class="container">
     <?php
-    if (isset($_GET['record-delete'])) {
+    if (isset($_GET['note-deleted'])) {
         ?>
         <div class="alert alert-danger">
-            <strong>Success!</strong> Record successfully deleted!
+            <strong>Success!</strong> Note successfully deleted!
+        </div>
+    <?php } ?>
+    <?php
+    if (isset($_GET['note-updated'])) {
+        ?>
+        <div class="alert alert-success">
+            <strong>Success!</strong> Note successfully updated!
         </div>
     <?php } ?>
     <div class="row">
@@ -57,7 +64,7 @@
                 <td><?php echo $row['date'];?></td>
                 <td><?php echo $row['name'];?></td>
                 <td><?php echo $row['description'];?></td>
-                <td style="text-align: center"><a href="../app/database/edit-data.php?id=<?php echo $row['id'];?>"><i class="fa fa-edit"></i></a> </td>
+                <td style="text-align: center"><a href="editnote.php?id=<?php echo $row['id'];?>"><i class="fa fa-edit"></i></a> </td>
                 <td style="text-align: center"><a href="../app/database/delete-data.php?id=<?php echo $row['id'];?>"><i class="fa-solid fa-trash text-danger"></i></a> </td>
             </tr>
            <?php
